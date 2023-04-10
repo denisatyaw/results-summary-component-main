@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700;800&family=Oxygen:wght@300;400;700&display=swap');
+
+    *, *::before, *::after{
+      box-sizing: border-box;
+    } 
+
+    body{
+      background-color:  hsl(0, 0%, 100%);
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 18px;
+    }
+
+    .container{
+      display: flex;
+      flex-direction: row;
+      width: 700px;
+      height: 480px;
+      box-shadow: 5px 6px 80px 0px rgba(122, 123, 128, 0.37);
+      border-radius: 1em;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      
+     
+    }
+
+    .side-left{
+      display: flex;
+      flex-direction: column;
+      background: rgb(46,43,233);
+      background: linear-gradient(0deg, rgba(46,43,233,1) 0%, rgba(120,87,255,1) 100%);
+      width: 50%;
+      height: 100%;
+      border-radius: 1em;
+      padding: 1em 2em 1em 2em;
+      color: rgb(209, 209, 209);
+      text-align: center;
+      flex-wrap: nowrap;
+      align-items: center;
+  
+    }
+
+    .side-left .circle{
+      display: flex;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;  
+      background: rgb(78,33,202);
+      background: linear-gradient(0deg, rgba(78,33,202,1) 0%, rgba(36,33,202,1) 100%);      
+      justify-content: center;
+      align-items: center;
+    }
+
+    .side-left .circle .text-circle .bold{
+      font-weight: bold;
+      font-size: 70px;
+      color: white;
+    }
+
+    .side-left h2{
+      color: white;
+    }
+    .side-right{
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      height: 100%;
+      padding: 1em 2em 1em 2em;
+    }
+    
+    .side-right .box{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      border-radius: 0.4em;
+      margin-bottom: 1em;
+      padding: 0.6em;
+      height: 2.5em;
+    }
+
+    .side-right .box .left{
+      width: 50%;
+      font-weight: 500;
+    }
+
+    .side-right .box .right{
+      display: flex;
+      width: 50%;
+      color: rgb(123, 123, 123);
+      justify-content: flex-end;
+    }
+
+    .side-right .box .bold{
+      font-weight: 700;
+      color: black;
+    }
+
+    .reaction{
+      color: hsl(0, 100%, 67%);
+      background-color: rgb(255, 87, 87,.1);
+    }
+
+    .memory{
+      color: hsl(39, 100%, 56%);
+      background-color: rgb(255, 176, 31,.1);
+    }
+
+    .verbal{
+      color: hsl(166, 100%, 37%);
+      background-color: rgb(0, 189, 145,.1);
+    }
+
+    .visual{
+      color: hsl(234, 85%, 45%);
+      background-color: rgb(17, 37, 212,.1);
+    }
+
+    .btn-black{
+      border-radius: 3em;
+      background-color: hsl(224, 30%, 27%);
+      width: 100%;
+      color: white;
+      border: 0px;
+      padding: 1.1em;
+      margin-top: 1.3em;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn-black:active{
+      background: linear-gradient(0deg, rgba(46,43,233,1) 0%, rgba(120,87,255,1) 100%);
+    }
+
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    @media screen and (max-width : 740px){
+      .container{
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+      }
+
+      .side-left{
+        width: 100%;
+        height: auto;
+        border-radius: 0 0 2em 2em;
+      }
+
+      .side-left .circle{
+      width: 150px;
+      height: 150px;
+      }
+      .side-right{
+        width: 100%;
+        height: auto;
+      }
+
+      .side-right .box{
+        height: 3em;
+      }
+
+      .btn-black{
+        font-size: 19px;
+      }
+    }
+
+    
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="side-left">
+      <h3>Your Result</h3>
+      <div class="circle">
+        <p class="text-circle">
+          <span class="bold">76</span><br/>
+          of 100
+        </p>
+      </div>
+      <h2>Great</h2>
+      <p>You scored higher than 65% of the people who have taken these tests.</p>
+    </div>
+    
+    <div class="side-right">
+      <h3>Summary</h3>
+      <div class="box reaction">  
+          <div class="left">
+            <img src="/assets/images/icon-reaction.svg" alt="reaction">
+            Reaction
+          </div> 
+          <div class="right">
+            <span class="bold">80 </span> &nbsp;/ 100
+          </div>
+      </div>
+      <div class="box memory">
+        <div class="left">
+          <img src="/assets/images/icon-memory.svg" alt="memory">
+          Memory
+        </div>
+        <div class="right">
+          <span class="bold">92 </span> &nbsp;/ 100
+        </div>
+      </div>
+      <div class="box verbal">
+        <div class="left">
+          <img src="/assets/images/icon-verbal.svg" alt="verbal">
+          Verbal
+        </div>
+        <div class="right">
+          <span class="bold">61 </span> &nbsp;/ 100
+        </div>
+      </div>
+      <div class="box visual">
+        <div class="left">
+          <img src="/assets/images/icon-visual.svg" alt="visual">
+          Visual
+        </div>
+        <div class="right">
+          <span class="bold">72 </span> &nbsp;/ 100
+        </div>
+      </div>
+      <button class="btn-black">Continue</button>
+    </div>
+   
+   
+  </div>
+
+  
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Denisatya Wiratama</a>.
+  </div>
+</body>
+</html>
